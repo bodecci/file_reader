@@ -12,8 +12,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	// Create a new scanner to read the file
 	scanner := bufio.NewScanner(file)
 
+	// Read each line of the file and print it
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
@@ -22,6 +24,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// Check for errors that occurred during the scan
 	if scanner.Err() != nil {
 		log.Fatal(err)
 	}
